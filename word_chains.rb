@@ -42,11 +42,4 @@ class Chainer
   end
 end
 
-
-times = []
-100.times do
-  start_time = Time.now
-  test = Chainer.new("duck", "ruby")
-  times <<  Time.now - start_time
-end
-p times.inject(:+)/100
+test = Chainer.new("duck", "ruby")

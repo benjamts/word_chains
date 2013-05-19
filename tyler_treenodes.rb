@@ -1,6 +1,5 @@
 require 'debugger'
-require 'srequire "word_chains"
-et'
+require 'set'
 class Tree
   attr_reader :root_node, :goal_value
   def initialize(opt = {}, &prc)
