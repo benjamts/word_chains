@@ -1,5 +1,6 @@
 require 'debugger'
-require 'set'
+require 'srequire "word_chains"
+et'
 class Tree
   attr_reader :root_node, :goal_value
   def initialize(opt = {}, &prc)
@@ -26,8 +27,10 @@ class Tree
 
   def get_child_values(node)
     child_values = @values_remain.dup
+    adjacent_steps = @rule.call(node.value)
     child_values.keep_if do |value|
-      @rule.call(node.value, value) && !@used_values.include?(value)
+      adjacent_steps.include?(value) &&
+        !@used_values.include?(value)
     end
     update_sets(child_values)
     child_values
